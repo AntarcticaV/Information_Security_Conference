@@ -8,9 +8,10 @@
         Title="Captcha" Height="296" Width="321" ResizeMode="NoResize">
     <Grid>
         <TextBlock x:Name="textBlockCaptcha" TextAlignment="Center" FontSize="18" HorizontalAlignment="Center" Margin="0,57,0,0" Text="TextBlock" VerticalAlignment="Top" Height="34" Width="301"/>
-        <TextBox x:Name="textBoxTest" HorizontalAlignment="Center" TextAlignment="Center" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="236" Height="35"/>
+        <TextBox x:Name="textBoxTest" FontFamily="Comic Sans MS" HorizontalAlignment="Center" TextAlignment="Center" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="236" Height="35"/>
         <Button x:Name="buttonCheck" Content="Проверить" HorizontalAlignment="Center" Margin="0,210,0,0" VerticalAlignment="Top" Click="buttonCheck_Click"/>
         <TextBlock x:Name="textBlockText"  HorizontalAlignment="Center" Margin="0,96,0,0" Text="Введите текст с картинки" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlockError" HorizontalAlignment="Center" Margin="0,176,0,0" Text="" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

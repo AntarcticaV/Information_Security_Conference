@@ -26,3 +26,5 @@ C:\Учеба\Разработка програмных модулей\Informati
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\App.baml
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Action.g.cs
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Action.baml
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Captcha.g.cs
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Captcha.baml

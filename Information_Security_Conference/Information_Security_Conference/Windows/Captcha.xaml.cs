@@ -19,9 +19,11 @@ namespace Information_Security_Conference.Windows
     /// </summary>
     public partial class Captcha : Window
     {
+        public bool Check = false;
         public Captcha()
         {
             InitializeComponent();
+            GenerateKey();
         }
 
         public void GenerateKey()
@@ -40,21 +42,28 @@ namespace Information_Security_Conference.Windows
                 temp = ar[(r.Next(0, ar.Length))];
                 pwd += temp;
             }
-            textBlockCaptcha.Text = pwd;
+            textBlockCaptcha.Text = pwd.Trim();
         }
 
         private void buttonCheck_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (CheckText(textBlockCaptcha.Text, textBoxTest.Text))
+            {
+                Check = true;
+                this.Close();
+            }
+            else
+            {
+                Check = false;
+                textBlockError.Text = "Попробуйте снова";
+                GenerateKey();
+            }
         }
 
         public bool CheckText(string str1, string str2)
         {
-            if (str1 == str2)
-            {
-                return true;
-            }
-            return false;
+         
+            return str1 == str2;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Information_Security_Conference.Entity;
 
 namespace Information_Security_Conference.Windows
 {
@@ -19,7 +20,7 @@ namespace Information_Security_Conference.Windows
     /// </summary>
     public partial class Authorization : Window
     {
-        public bool CaptchaCheck;
+        //public bool CaptchaCheck;
         public Authorization()
         {
             InitializeComponent();
@@ -27,8 +28,44 @@ namespace Information_Security_Conference.Windows
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            var gg = new Captcha();
-            //gg.ShowDialog(this);
+            
+
+            using (var bd = new InformationSecurityConferenceEntities1())
+            {
+                var user = bd.User.FirstOrDefault(item => item.UniqueID.ToString() == textBoxLogin.Text && item.Password==passwordBox.Password);
+                if (user != null)
+                {
+                    var gg = new Captcha();
+                    gg.ShowDialog();
+                    if (gg.Check)
+                    {
+                        switch (user.IDRole)
+                        {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                var org = new MenuOrganizatory(user);
+                                org.Show();
+                                this.Close();
+                                break;
+                            default:
+                                textBlockError.Text = "Ну несвязно";
+                                break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    textBlockError.Text = "Неверный логин или пороль";
+                }
+            }
+            
+            
         }
     }
 }
