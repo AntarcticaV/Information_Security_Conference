@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище InformationSecurityConferenceModelContainer" CdmEntityContainer="InformationSecurityConferenceEntities1">
+    <EntitySetMapping Name="Action">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Action">
+        <MappingFragment StoreEntitySet="Action">
+          <ScalarProperty Name="IDAction" ColumnName="IDAction" />
+          <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+          <ScalarProperty Name="Action1" ColumnName="Action" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="IDOrganizer" ColumnName="IDOrganizer" />
+          <ScalarProperty Name="Winner" ColumnName="Winner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activity">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activyti_and_Zhuri">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Activyti_and_Zhuri">
+        <MappingFragment StoreEntitySet="Activyti_and_Zhuri">
+          <ScalarProperty Name="IDActivyti" ColumnName="IDActivyti" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="IDModerator" ColumnName="IDModerator" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Cities">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="IDGorod" ColumnName="IDGorod" />
+          <ScalarProperty Name="NameCity" ColumnName="NameCity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Country_name" ColumnName="Country_name" />
+          <ScalarProperty Name="English_name" ColumnName="English_name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Code2" ColumnName="Code2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direction">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Direction">
+        <MappingFragment StoreEntitySet="Direction">
+          <ScalarProperty Name="IDDirection" ColumnName="IDDirection" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_actions">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Event_actions">
+        <MappingFragment StoreEntitySet="Event_actions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+          <ScalarProperty Name="IDAction" ColumnName="IDAction" />
+          <ScalarProperty Name="Date_start" ColumnName="Date_start" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Moderatory">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Moderatory">
+        <MappingFragment StoreEntitySet="Moderatory">
+          <ScalarProperty Name="IDModeratory" ColumnName="IDModeratory" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="IDDirection" ColumnName="IDDirection" />
+          <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizatory">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Organizatory">
+        <MappingFragment StoreEntitySet="Organizatory">
+          <ScalarProperty Name="IDOrganizatory" ColumnName="IDOrganizatory" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uchastniki">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Uchastniki">
+        <MappingFragment StoreEntitySet="Uchastniki">
+          <ScalarProperty Name="IDUchastniki" ColumnName="IDUchastniki" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zhuri">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.Zhuri">
+        <MappingFragment StoreEntitySet="Zhuri">
+          <ScalarProperty Name="IDZhuri" ColumnName="IDZhuri" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="IDDirection" ColumnName="IDDirection" />
+          <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="List_activyti_and_Zhuri">
+      <EntityTypeMapping TypeName="InformationSecurityConferenceModel.List_activyti_and_Zhuri">
+        <MappingFragment StoreEntitySet="List_activyti_and Zhuri">
+          <ScalarProperty Name="ID_activyti" ColumnName="ID_activyti" />
+          <ScalarProperty Name="ID_Zhuri" ColumnName="ID_Zhuri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="List_event_action_and_activyti_and_Zhuri" TypeName="InformationSecurityConferenceModel.List_event_action_and_activyti_and_Zhuri" StoreEntitySet="List_event_action_and_activyti_and_Zhuri">
+      <EndProperty Name="Activyti_and_Zhuri">
+        <ScalarProperty Name="ID" ColumnName="IDActivyti_and_Zhuri" />
+      </EndProperty>
+      <EndProperty Name="Event_actions">
+        <ScalarProperty Name="ID" ColumnName="ID_event_action" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище InformationSecurityConferenceModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище InformationSecurityConferenceModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище InformationSecurityConferenceModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище InformationSecurityConferenceModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InformationSecurityConferenceModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище InformationSecurityConferenceModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InformationSecurityConferenceModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище InformationSecurityConferenceModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище InformationSecurityConferenceModel.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

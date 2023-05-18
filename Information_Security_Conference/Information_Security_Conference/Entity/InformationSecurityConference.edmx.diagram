@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc69da5d0e094a83beb4d92458956636" Name="Diagram1">
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Action" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Activity" Width="1.5" PointX="7.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Activyti_and_Zhuri" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Cities" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Countries" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Direction" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Event" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Event_actions" Width="1.5" PointX="7.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Gender" Width="1.5" PointX="3.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Moderatory" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Organizatory" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Role" Width="1.5" PointX="1.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Uchastniki" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.User" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.Zhuri" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InformationSecurityConferenceModel.List_activyti_and_Zhuri" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Action_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Action_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Action_Organizatory" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Action_Uchastniki" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Event_actions_Action" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Activity_Activyti_and_Zhuri" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Activyti_and_Zhuri_Moderatory" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_List_activyti_and_Zhuri_Activyti_and_Zhuri" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Moderatory_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Organizatory_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Uchastniki_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Zhuri_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Moderatory_Direction" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Zhuri_Direction" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Event_actions_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Moderatory_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Moderatory_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Organizatory_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Uchastniki_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Zhuri_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Moderatory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Organizatory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Uchastniki_User" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_Zhuri_User" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.FK_List_activyti_and_Zhuri_Zhuri" ManuallyRouted="false" />
+        <AssociationConnector Association="InformationSecurityConferenceModel.List_event_action_and_activyti_and_Zhuri" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

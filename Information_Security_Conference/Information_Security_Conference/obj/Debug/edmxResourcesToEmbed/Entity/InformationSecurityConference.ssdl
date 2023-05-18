@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище InformationSecurityConferenceModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Action">
+    <Key>
+      <PropertyRef Name="IDAction" />
+    </Key>
+    <Property Name="IDAction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDEvent" Type="int" Nullable="false" />
+    <Property Name="Action" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Days" Type="int" Nullable="false" />
+    <Property Name="City" Type="int" Nullable="false" />
+    <Property Name="Logo" Type="nvarchar(max)" />
+    <Property Name="IDOrganizer" Type="int" Nullable="false" />
+    <Property Name="Winner" Type="int" />
+  </EntityType>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="IDActivity" />
+    </Key>
+    <Property Name="IDActivity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Activyti_and_Zhuri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="IDActivyti" Type="int" Nullable="false" />
+    <Property Name="Day" Type="int" Nullable="false" />
+    <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="IDModerator" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="IDGorod" />
+    </Key>
+    <Property Name="IDGorod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameCity" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Code2" />
+    </Key>
+    <Property Name="Country_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="English_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Code2" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Direction">
+    <Key>
+      <PropertyRef Name="IDDirection" />
+    </Key>
+    <Property Name="IDDirection" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="IDEvent" />
+    </Key>
+    <Property Name="IDEvent" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_actions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDEvent" Type="int" Nullable="false" />
+    <Property Name="IDAction" Type="int" Nullable="false" />
+    <Property Name="Date_start" Type="datetime" Nullable="false" />
+    <Property Name="Days" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="IDGender" />
+    </Key>
+    <Property Name="IDGender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "InformationSecurityConference.dbo.List_activyti_and Zhuri" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="List_activyti_and Zhuri">
+    <Key>
+      <PropertyRef Name="ID_activyti" />
+    </Key>
+    <Property Name="ID_activyti" Type="int" Nullable="false" />
+    <Property Name="ID_Zhuri" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "InformationSecurityConference.dbo.List_event_action_and_activyti_and_Zhuri" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="List_event_action_and_activyti_and_Zhuri">
+    <Key>
+      <PropertyRef Name="ID_event_action" />
+      <PropertyRef Name="IDActivyti_and_Zhuri" />
+    </Key>
+    <Property Name="ID_event_action" Type="int" Nullable="false" />
+    <Property Name="IDActivyti_and_Zhuri" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Moderatory">
+    <Key>
+      <PropertyRef Name="IDModeratory" />
+    </Key>
+    <Property Name="IDModeratory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="IDGender" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthdate" Type="datetime" Nullable="false" />
+    <Property Name="IDCountry" Type="int" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IDDirection" Type="int" Nullable="false" />
+    <Property Name="IDEvent" Type="int" Nullable="false" />
+    <Property Name="UniqueID" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Organizatory">
+    <Key>
+      <PropertyRef Name="IDOrganizatory" />
+    </Key>
+    <Property Name="IDOrganizatory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthdate" Type="datetime" Nullable="false" />
+    <Property Name="IDCountry" Type="int" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UniqueID" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" />
+    <Property Name="IDGender" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Uchastniki">
+    <Key>
+      <PropertyRef Name="IDUchastniki" />
+    </Key>
+    <Property Name="IDUchastniki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthdate" Type="datetime" Nullable="false" />
+    <Property Name="IDCountry" Type="int" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UniqueID" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" />
+    <Property Name="IDGender" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UniqueID" />
+    </Key>
+    <Property Name="UniqueID" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IDRole" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zhuri">
+    <Key>
+      <PropertyRef Name="IDZhuri" />
+    </Key>
+    <Property Name="IDZhuri" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="100" />
+    <Property Name="IDGender" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Birthdate" Type="datetime" Nullable="false" />
+    <Property Name="IDCountry" Type="int" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IDDirection" Type="int" Nullable="false" />
+    <Property Name="UniqueID" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Action_Cities">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="IDGorod" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="IDEvent" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="IDEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_Organizatory">
+    <End Role="Organizatory" Type="Self.Organizatory" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizatory">
+        <PropertyRef Name="IDOrganizatory" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="IDOrganizer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_Uchastniki">
+    <End Role="Uchastniki" Type="Self.Uchastniki" Multiplicity="0..1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uchastniki">
+        <PropertyRef Name="IDUchastniki" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="Winner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Activity_Activyti_and_Zhuri">
+    <End Role="Activyti_and_Zhuri" Type="Self.Activyti_and_Zhuri" Multiplicity="1" />
+    <End Role="Activity" Type="Self.Activity" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Activyti_and_Zhuri">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Activyti_and_Zhuri_Moderatory">
+    <End Role="Moderatory" Type="Self.Moderatory" Multiplicity="1" />
+    <End Role="Activyti_and_Zhuri" Type="Self.Activyti_and_Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Moderatory">
+        <PropertyRef Name="IDModeratory" />
+      </Principal>
+      <Dependent Role="Activyti_and_Zhuri">
+        <PropertyRef Name="IDModerator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_actions_Action">
+    <End Role="Action" Type="Self.Action" Multiplicity="1" />
+    <End Role="Event_actions" Type="Self.Event_actions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Action">
+        <PropertyRef Name="IDAction" />
+      </Principal>
+      <Dependent Role="Event_actions">
+        <PropertyRef Name="IDAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_actions_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Event_actions" Type="Self.Event_actions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="IDEvent" />
+      </Principal>
+      <Dependent Role="Event_actions">
+        <PropertyRef Name="IDEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_List_activyti_and Zhuri_Activyti_and_Zhuri">
+    <End Role="Activyti_and_Zhuri" Type="Self.Activyti_and_Zhuri" Multiplicity="1" />
+    <End Role="List_activyti_and Zhuri" Type="Self.List_activyti_and Zhuri" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Activyti_and_Zhuri">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="List_activyti_and Zhuri">
+        <PropertyRef Name="ID_activyti" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_List_activyti_and Zhuri_Zhuri">
+    <End Role="Zhuri" Type="Self.Zhuri" Multiplicity="0..1" />
+    <End Role="List_activyti_and Zhuri" Type="Self.List_activyti_and Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zhuri">
+        <PropertyRef Name="IDZhuri" />
+      </Principal>
+      <Dependent Role="List_activyti_and Zhuri">
+        <PropertyRef Name="ID_Zhuri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_List_event_action_and_activyti_and_Zhuri_Activyti_and_Zhuri">
+    <End Role="Activyti_and_Zhuri" Type="Self.Activyti_and_Zhuri" Multiplicity="1" />
+    <End Role="List_event_action_and_activyti_and_Zhuri" Type="Self.List_event_action_and_activyti_and_Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activyti_and_Zhuri">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="List_event_action_and_activyti_and_Zhuri">
+        <PropertyRef Name="IDActivyti_and_Zhuri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_List_event_action_and_activyti_and_Zhuri_Event_actions">
+    <End Role="Event_actions" Type="Self.Event_actions" Multiplicity="1" />
+    <End Role="List_event_action_and_activyti_and_Zhuri" Type="Self.List_event_action_and_activyti_and_Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_actions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="List_event_action_and_activyti_and_Zhuri">
+        <PropertyRef Name="ID_event_action" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Moderatory_Countries">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="Moderatory" Type="Self.Moderatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Code2" />
+      </Principal>
+      <Dependent Role="Moderatory">
+        <PropertyRef Name="IDCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Moderatory_Direction">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="1" />
+    <End Role="Moderatory" Type="Self.Moderatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="IDDirection" />
+      </Principal>
+      <Dependent Role="Moderatory">
+        <PropertyRef Name="IDDirection" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Moderatory_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Moderatory" Type="Self.Moderatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="IDEvent" />
+      </Principal>
+      <Dependent Role="Moderatory">
+        <PropertyRef Name="IDEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Moderatory_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Moderatory" Type="Self.Moderatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="IDGender" />
+      </Principal>
+      <Dependent Role="Moderatory">
+        <PropertyRef Name="IDGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Moderatory_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Moderatory" Type="Self.Moderatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UniqueID" />
+      </Principal>
+      <Dependent Role="Moderatory">
+        <PropertyRef Name="UniqueID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Organizatory_Countries">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="Organizatory" Type="Self.Organizatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Code2" />
+      </Principal>
+      <Dependent Role="Organizatory">
+        <PropertyRef Name="IDCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Organizatory_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Organizatory" Type="Self.Organizatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="IDGender" />
+      </Principal>
+      <Dependent Role="Organizatory">
+        <PropertyRef Name="IDGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Organizatory_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Organizatory" Type="Self.Organizatory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UniqueID" />
+      </Principal>
+      <Dependent Role="Organizatory">
+        <PropertyRef Name="UniqueID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Uchastniki_Countries">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="Uchastniki" Type="Self.Uchastniki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Code2" />
+      </Principal>
+      <Dependent Role="Uchastniki">
+        <PropertyRef Name="IDCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Uchastniki_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Uchastniki" Type="Self.Uchastniki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="IDGender" />
+      </Principal>
+      <Dependent Role="Uchastniki">
+        <PropertyRef Name="IDGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Uchastniki_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Uchastniki" Type="Self.Uchastniki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UniqueID" />
+      </Principal>
+      <Dependent Role="Uchastniki">
+        <PropertyRef Name="UniqueID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zhuri_Countries">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="Zhuri" Type="Self.Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Code2" />
+      </Principal>
+      <Dependent Role="Zhuri">
+        <PropertyRef Name="IDCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zhuri_Direction">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="1" />
+    <End Role="Zhuri" Type="Self.Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="IDDirection" />
+      </Principal>
+      <Dependent Role="Zhuri">
+        <PropertyRef Name="IDGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zhuri_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Zhuri" Type="Self.Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="IDGender" />
+      </Principal>
+      <Dependent Role="Zhuri">
+        <PropertyRef Name="IDGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zhuri_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Zhuri" Type="Self.Zhuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UniqueID" />
+      </Principal>
+      <Dependent Role="Zhuri">
+        <PropertyRef Name="UniqueID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище InformationSecurityConferenceModelContainer">
+    <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Activyti_and_Zhuri" EntityType="Self.Activyti_and_Zhuri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direction" EntityType="Self.Direction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_actions" EntityType="Self.Event_actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Moderatory" EntityType="Self.Moderatory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organizatory" EntityType="Self.Organizatory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uchastniki" EntityType="Self.Uchastniki" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zhuri" EntityType="Self.Zhuri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="List_activyti_and Zhuri" EntityType="Self.List_activyti_and Zhuri" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [List_activyti_and Zhuri].[ID_activyti] AS [ID_activyti], 
+    [List_activyti_and Zhuri].[ID_Zhuri] AS [ID_Zhuri]
+    FROM [dbo].[List_activyti_and Zhuri] AS [List_activyti_and Zhuri]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="List_event_action_and_activyti_and_Zhuri" EntityType="Self.List_event_action_and_activyti_and_Zhuri" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [List_event_action_and_activyti_and_Zhuri].[ID_event_action] AS [ID_event_action], 
+    [List_event_action_and_activyti_and_Zhuri].[IDActivyti_and_Zhuri] AS [IDActivyti_and_Zhuri]
+    FROM [dbo].[List_event_action_and_activyti_and_Zhuri] AS [List_event_action_and_activyti_and_Zhuri]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Action_Cities" Association="Self.FK_Action_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_Event" Association="Self.FK_Action_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_Organizatory" Association="Self.FK_Action_Organizatory">
+      <End Role="Organizatory" EntitySet="Organizatory" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_Uchastniki" Association="Self.FK_Action_Uchastniki">
+      <End Role="Uchastniki" EntitySet="Uchastniki" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Activity_Activyti_and_Zhuri" Association="Self.FK_Activity_Activyti_and_Zhuri">
+      <End Role="Activyti_and_Zhuri" EntitySet="Activyti_and_Zhuri" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Activyti_and_Zhuri_Moderatory" Association="Self.FK_Activyti_and_Zhuri_Moderatory">
+      <End Role="Moderatory" EntitySet="Moderatory" />
+      <End Role="Activyti_and_Zhuri" EntitySet="Activyti_and_Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_actions_Action" Association="Self.FK_Event_actions_Action">
+      <End Role="Action" EntitySet="Action" />
+      <End Role="Event_actions" EntitySet="Event_actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_actions_Event" Association="Self.FK_Event_actions_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Event_actions" EntitySet="Event_actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_List_activyti_and Zhuri_Activyti_and_Zhuri" Association="Self.FK_List_activyti_and Zhuri_Activyti_and_Zhuri">
+      <End Role="Activyti_and_Zhuri" EntitySet="Activyti_and_Zhuri" />
+      <End Role="List_activyti_and Zhuri" EntitySet="List_activyti_and Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_List_activyti_and Zhuri_Zhuri" Association="Self.FK_List_activyti_and Zhuri_Zhuri">
+      <End Role="Zhuri" EntitySet="Zhuri" />
+      <End Role="List_activyti_and Zhuri" EntitySet="List_activyti_and Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_List_event_action_and_activyti_and_Zhuri_Activyti_and_Zhuri" Association="Self.FK_List_event_action_and_activyti_and_Zhuri_Activyti_and_Zhuri">
+      <End Role="Activyti_and_Zhuri" EntitySet="Activyti_and_Zhuri" />
+      <End Role="List_event_action_and_activyti_and_Zhuri" EntitySet="List_event_action_and_activyti_and_Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_List_event_action_and_activyti_and_Zhuri_Event_actions" Association="Self.FK_List_event_action_and_activyti_and_Zhuri_Event_actions">
+      <End Role="Event_actions" EntitySet="Event_actions" />
+      <End Role="List_event_action_and_activyti_and_Zhuri" EntitySet="List_event_action_and_activyti_and_Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Moderatory_Countries" Association="Self.FK_Moderatory_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Moderatory" EntitySet="Moderatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Moderatory_Direction" Association="Self.FK_Moderatory_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Moderatory" EntitySet="Moderatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Moderatory_Event" Association="Self.FK_Moderatory_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Moderatory" EntitySet="Moderatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Moderatory_Gender" Association="Self.FK_Moderatory_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Moderatory" EntitySet="Moderatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Moderatory_User" Association="Self.FK_Moderatory_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Moderatory" EntitySet="Moderatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Organizatory_Countries" Association="Self.FK_Organizatory_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Organizatory" EntitySet="Organizatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Organizatory_Gender" Association="Self.FK_Organizatory_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Organizatory" EntitySet="Organizatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Organizatory_User" Association="Self.FK_Organizatory_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Organizatory" EntitySet="Organizatory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Uchastniki_Countries" Association="Self.FK_Uchastniki_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Uchastniki" EntitySet="Uchastniki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Uchastniki_Gender" Association="Self.FK_Uchastniki_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Uchastniki" EntitySet="Uchastniki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Uchastniki_User" Association="Self.FK_Uchastniki_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Uchastniki" EntitySet="Uchastniki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zhuri_Countries" Association="Self.FK_Zhuri_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Zhuri" EntitySet="Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zhuri_Direction" Association="Self.FK_Zhuri_Direction">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Zhuri" EntitySet="Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zhuri_Gender" Association="Self.FK_Zhuri_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Zhuri" EntitySet="Zhuri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zhuri_User" Association="Self.FK_Zhuri_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Zhuri" EntitySet="Zhuri" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
