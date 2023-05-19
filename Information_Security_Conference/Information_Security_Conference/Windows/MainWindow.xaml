@@ -25,14 +25,14 @@
                     <GridViewColumn Header="Название мероприятия"  Width="600" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}" ></TextBlock>
+                                <TextBlock Text="{Binding Action1}" ></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Направление"  Width="115">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Event}" ></TextBlock>
+                                <TextBlock Text="{Binding Event.Title}" ></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

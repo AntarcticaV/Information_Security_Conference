@@ -8,12 +8,10 @@ C:\Учеба\Разработка програмных модулей\Informati
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\bin\Debug\ru\EntityFramework.resources.dll
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference.csproj.AssemblyReference.cache
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference.csproj.SuggestedBindingRedirects.cache
-C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\MainWindow.g.cs
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\App.g.cs
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference_Content.g.cs
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference_MarkupCompile.cache
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference_MarkupCompile.lref
-C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\MainWindow.baml
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference.g.resources
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference.Properties.Resources.resources
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Information_Security_Conference.csproj.GenerateResource.cache
@@ -28,3 +26,7 @@ C:\Учеба\Разработка програмных модулей\Informati
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Action.baml
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Captcha.g.cs
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Captcha.baml
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MenuOrganizatory.g.cs
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MenuOrganizatory.baml
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MainWindow.g.cs
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MainWindow.baml

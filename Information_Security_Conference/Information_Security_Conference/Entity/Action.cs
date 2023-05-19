@@ -10,8 +10,11 @@
 namespace Information_Security_Conference.Entity
 {
     using System;
+    using System.IO;
     using System.Collections.Generic;
-    
+    using Information_Security_Conference.FindImage;
+
+
     public partial class Action
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -36,5 +39,14 @@ namespace Information_Security_Conference.Entity
         public virtual Uchastniki Uchastniki { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Event_actions> Event_actions { get; set; }
+
+        public string Path {
+            get
+            {
+                var dir = Directory.GetFiles(
+                    "C:\\Учеба\\Разработка програмных модулей\\Вариант 1\\Сессия 1\\Мероприятия_import", "*.*g");
+                var search = new SearchFile();
+                return search.SearchPath(dir, Logo);
+            } }
     }
 }

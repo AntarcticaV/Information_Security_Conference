@@ -22,8 +22,8 @@ namespace Information_Security_Conference.Windows
     /// </summary>
     public partial class Action : Window
     {
-        private LogoModel _Logo;
-        public Action(LogoModel logo)
+        private Entity.Action _Logo;
+        public Action(Entity.Action logo)
         {
             InitializeComponent();
             _Logo = logo;
@@ -35,8 +35,8 @@ namespace Information_Security_Conference.Windows
             using (var bd = new InformationSecurityConferenceEntities1())
             {
                 bd.Organizatory.Load();
-                var item = bd.Action.Where(o => o.IDAction == _Logo.ID).FirstOrDefault();
-                Logo.Source = new BitmapImage(new Uri(_Logo.Path));
+                var item = bd.Action.Where(o => o.IDAction == _Logo.IDAction).FirstOrDefault();
+                Logo.Source = new BitmapImage(new Uri(item.Path));
                 textBlockName.Text = item.Action1;
                 textBlockCity.Text = item.Cities.NameCity;
                 textBlockData.Text = item.Date.Day+"-"+item.Date.Month+"-"+item.Date.Year;
