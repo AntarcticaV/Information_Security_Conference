@@ -9,10 +9,44 @@
 >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="237*"/>
-            <RowDefinition Height="197*"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="396"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView x:Name="ListAction" ItemsSource="{Binding Logo}" Margin="10,107,10,77" Grid.RowSpan="2" SelectionChanged="ListAction_SelectionChanged"  GridViewColumnHeader.Click="ListAction_OnClick">
+        <Rectangle Fill="#99FFFF" ></Rectangle>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250*"/>
+                <ColumnDefinition Width="293*"/>
+                <ColumnDefinition Width="293*"/>
+                <ColumnDefinition Width="164*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0,10,0" Height="62">
+                <TextBlock x:Name="textBlockDate" Text="Дата" Margin="0,0,0,5" />
+                <DatePicker x:Name="datePicker"   Height="40" >
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="IsReadOnly" Value="True"/>
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+            </StackPanel>
+            <StackPanel Grid.Column="2"  VerticalAlignment="Center" Margin="10,0,10,0" Height="52">
+                <TextBlock x:Name="textBlockEvent" Text="Направления" Height="17" Margin="0,0,0,5"/>
+                <ComboBox x:Name="ComboBoxEvent"  Height="62"  SelectedValuePath="IDEvent" DisplayMemberPath="Title" />
+            </StackPanel>
+
+
+            <Image Source="../Image/logo.png" HorizontalAlignment="Left" Margin="5,5,0,5" Width="110" />
+
+
+            <Button Grid.Column="3" x:Name="buttonSearch" Content="Поиск" Margin="5,20,5,0" Click="buttonSearch_Click" />
+
+        </Grid>
+
+        <ListView Grid.Row="1"  x:Name="ListAction" ItemsSource="{Binding Logo}"  SelectionChanged="ListAction_SelectionChanged"  GridViewColumnHeader.Click="ListAction_OnClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Логотип" >
@@ -46,6 +80,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button" Content="Авторизация" Margin="0,0,65,24" Grid.Row="1" HorizontalAlignment="Right" Width="162" Height="34" VerticalAlignment="Bottom" Click="button_Click"/>
+        <Button Grid.Row="2" x:Name="button" Content="Авторизация" Margin="0,0,10,10" HorizontalAlignment="Right" Width="162" Height="34" VerticalAlignment="Bottom" Click="button_Click"/>
+
+
     </Grid>
 </Window>

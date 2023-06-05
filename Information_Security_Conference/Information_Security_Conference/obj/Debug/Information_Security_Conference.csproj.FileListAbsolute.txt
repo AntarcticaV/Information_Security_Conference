@@ -30,3 +30,5 @@ C:\Учеба\Разработка програмных модулей\Informati
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MenuOrganizatory.baml
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MainWindow.g.cs
 C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\MainWindow.baml
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Profile.g.cs
+C:\Учеба\Разработка програмных модулей\Information Security Conference\Information_Security_Conference\Information_Security_Conference\obj\Debug\Windows\Profile.baml

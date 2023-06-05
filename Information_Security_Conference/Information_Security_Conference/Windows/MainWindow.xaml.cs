@@ -35,15 +35,26 @@ namespace Information_Security_Conference
             InitializeComponent();
             
             LoadList();
+            LoadCheckBox();
         }
 
         public void LoadList()
         {
             using (var bd = new InformationSecurityConferenceEntities1())
             {
+                //ListAction.Items.Clear();
                 var Logo = bd.Action.ToList();
                 bd.Event.Load();
                 ListAction.ItemsSource = Logo;
+            }
+        }
+
+        public void LoadCheckBox()
+        {
+            using (var bd = new InformationSecurityConferenceEntities1())
+            {
+                var Event= bd.Event.ToList();
+                ComboBoxEvent.ItemsSource = Event;
             }
         }
 
@@ -64,10 +75,47 @@ namespace Information_Security_Conference
         {
             var headerClicked = e.OriginalSource as GridViewColumnHeader;
             ListSortDirection direction;
-
-            
-
         }
 
+        private void buttonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (ComboBoxEvent.SelectionBoxItem == "" && datePicker.Text == "")
+            {
+                LoadList();
+            }
+            if (ComboBoxEvent.SelectionBoxItem != "" && datePicker.Text == "")
+            {
+                using (var bd = new InformationSecurityConferenceEntities1())
+                {
+                    //ListAction.Items.Clear();
+                    bd.Event.Load();
+                    Event gg = (Event)ComboBoxEvent.SelectionBoxItem;
+                    var Logo = bd.Action.Where(o => o.Event.Title == gg.Title).ToList();
+                    
+                    ListAction.ItemsSource = Logo;
+                }
+            }
+
+            if (ComboBoxEvent.SelectionBoxItem == "" && datePicker.Text != "")
+            {
+                using (var bd = new InformationSecurityConferenceEntities1())
+                {
+                    bd.Event.Load();
+                    var Logo = bd.Action.Where(o => o.Date == datePicker.SelectedDate).ToList();
+                    ListAction.ItemsSource = Logo;
+                }
+            }
+
+            if (ComboBoxEvent.SelectionBoxItem != "" && datePicker.Text != "")
+            {
+                using (var bd = new InformationSecurityConferenceEntities1())
+                {
+                    bd.Event.Load();
+                    Event gg = (Event)ComboBoxEvent.SelectionBoxItem;
+                    var Logo = bd.Action.Where(o => o.Date == datePicker.SelectedDate && o.Event.Title==gg.Title).ToList();
+                    ListAction.ItemsSource = Logo;
+                }
+            }
+        }
     }
 }

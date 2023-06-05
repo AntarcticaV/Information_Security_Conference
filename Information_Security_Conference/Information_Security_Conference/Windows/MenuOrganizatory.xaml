@@ -7,6 +7,34 @@
         mc:Ignorable="d"
         Title="MenuOrganizatory" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="315"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row ="0" Fill="#99FFFF" ></Rectangle>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="163*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="../Image/logo.png" HorizontalAlignment="Left" Margin="5,5,0,5" Width="110" />
+            <TextBlock Grid.Column="1" FontSize="60" Text="Окно Организатора" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="107*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                <Image x:Name="ImageOrg" Height="150" Width="168" Margin="10"/>
+                <Button x:Name="ButtonProfile" Content="Мой профиль" Margin="15" Click="ButtonProfile_Click" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                <TextBlock x:Name="TextBlockHello" FontSize="20" TextAlignment="Center" Text="Доброе "/>
+                <Button x:Name="ButtonAction" Content="Мероприятия" Height="63" Width="238"  Margin="10"/>
+                <Button x:Name="ButtonParticipants" Content="Участники" Height="63" Width="238"  Margin="10"/>
+                <Button x:Name="ButtonJury" Content="Жюри" Margin="10" Height="63" Width="238"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

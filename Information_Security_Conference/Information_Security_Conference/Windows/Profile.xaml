@@ -1,0 +1,75 @@
+﻿<Window x:Class="Information_Security_Conference.Windows.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Information_Security_Conference.Windows"
+        mc:Ignorable="d"
+        Title="Profile" Height="500" Width="800" MinHeight="500" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="315"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row ="0" Fill="#99FFFF" />
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="163*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="../Image/logo.png" HorizontalAlignment="Left" Margin="5,5,0,5" Width="110" />
+            <TextBlock Grid.Column="1" FontSize="60" Text="Мой профиль" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="154*"/>
+                <ColumnDefinition Width="177*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                <TextBlock Text="ФИО:" TextAlignment="Right" Margin="10"/>
+                <TextBlock Text="Пол:" TextAlignment="Right" Margin="10"/>
+                <TextBlock Text="Дата рождения:" TextAlignment="Right" Margin="10"/>
+                <TextBlock Text="ID Number:" TextAlignment="Right" Margin="10"/>
+                <TextBlock Text="Страна:" TextAlignment="Right" Margin="10"/>
+                <TextBlock Text="Телофон:" TextAlignment="Right" Margin="10"/>
+                <TextBlock Text="Email:" TextAlignment="Right" Margin="10"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <TextBlock x:Name="TextBlockFSP" TextAlignment="Left" Margin="10"/>
+                <TextBlock x:Name="TextBlockGender" TextAlignment="Left" Margin="10"/>
+                <TextBlock x:Name="TextBlockDate" TextAlignment="Left" Margin="10"/>
+                <TextBlock x:Name="TextBlockIDNumder" TextAlignment="Left" Margin="10"/>
+                <TextBlock x:Name="TextBlockCountry" TextAlignment="Left" Margin="10"/>
+                <TextBlock x:Name="TextBlockPhoneNumber" TextAlignment="Left" Margin="10"/>
+                <TextBlock x:Name="TextBlockEmail" TextAlignment="Left" Margin="10"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" >
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image x:Name="ImageOrg" Height="108" Width="162" Margin="10"/>
+                    <CheckBox x:Name="CheckBoxPassword" Content="Смена пароля" Margin="10" HorizontalAlignment="Center" Unchecked="CheckBoxPassword_Checked" Checked="CheckBoxPassword_Checked"/>
+                </StackPanel>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock x:Name="TextBlockPassword" Text="Пароль:" TextAlignment="Right" Margin="10"/>
+                        <TextBlock x:Name="TextBlockPasswordConfirm" Text="Подтвердить пароль:" TextAlignment="Right" Margin="10"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <PasswordBox x:Name="PasswordBox" Margin="10" IsEnabled="False"/>
+                        <PasswordBox x:Name="PasswordBoxCofirm" Margin="10" IsEnabled="False"/>
+                    </StackPanel>
+                </Grid>
+                <CheckBox x:Name="CheckBoxView" HorizontalAlignment="Center" Content="Видимы пароль" Unchecked="CheckBoxView_Checked" Checked="CheckBoxView_Checked"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="ButtonOk" Content="OK" Margin="10"/>
+                    <Button x:Name="ButtonClose" Content="Отмена" Margin="10" Click="ButtonClose_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

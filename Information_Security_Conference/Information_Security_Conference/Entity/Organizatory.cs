@@ -9,7 +9,8 @@
 
 namespace Information_Security_Conference.Entity
 {
-    using System;
+    using Information_Security_Conference.FindImage;
+    using System.IO;
     using System.Collections.Generic;
     
     public partial class Organizatory
@@ -37,5 +38,16 @@ namespace Information_Security_Conference.Entity
         public virtual Countries Countries { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual User User { get; set; }
+
+        public string Path
+        {
+            get
+            {
+                var dir = Directory.GetFiles(
+                    "C:\\Учеба\\Разработка програмных модулей\\Вариант 1\\Сессия 1\\Организаторы_import", "*.*g");
+                var search = new SearchFile();
+                return search.SearchPath(dir, Photo);
+            }
+        }
     }
 }
